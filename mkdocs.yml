@@ -1,1 +1,9 @@
-site_name: My Docs
+﻿site_name: My Docs
+site_url: https://python-basic.github.io/mkdocs-site/
+use_directory_urls: true
+
+theme:
+  name: material
+
+nav:
+  - Home: index.md
