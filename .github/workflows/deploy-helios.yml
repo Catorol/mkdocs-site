@@ -1,0 +1,130 @@
+name: Deploy to Helios
+
+on:
+  push:
+    branches: ['**']
+  workflow_dispatch:
+
+concurrency:
+  group: helios-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install "mkdocs==1.6.1" "mkdocs-material==9.5.39"
+          # или: pip install -r requirements.txt
+
+      - name: Resolve deploy path and site_url
+        id: meta
+        run: |
+          BRANCH="${GITHUB_REF_NAME}"
+          # безопасное имя каталога
+          SAFE=$(echo "$BRANCH" | sed 's#[^a-zA-Z0-9._-]#-#g')
+          if [ "$BRANCH" = "main" ] || [ "$BRANCH" = "master" ]; then
+            echo "remote_subdir=" >> $GITHUB_OUTPUT
+            echo "site_url=${{ secrets.SITE_URL_BASE }}/" >> $GITHUB_OUTPUT
+            echo "public_url=${{ secrets.SITE_URL_BASE }}/" >> $GITHUB_OUTPUT
+          else
+            echo "remote_subdir=preview/${SAFE}" >> $GITHUB_OUTPUT
+            echo "site_url=${{ secrets.SITE_URL_BASE }}/preview/${SAFE}/" >> $GITHUB_OUTPUT
+            echo "public_url=${{ secrets.SITE_URL_BASE }}/preview/${SAFE}/" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Patch site_url for this deploy
+        run: |
+          # подставить site_url под текущую ветку
+          python - << 'PY'
+          import pathlib, re, os
+          p = pathlib.Path("mkdocs.yml")
+          text = p.read_text(encoding="utf-8")
+          url = os.environ["SITE_URL"]
+          if re.search(r"^site_url:\s*.*$", text, re.M):
+              text = re.sub(r"^site_url:\s*.*$", f"site_url: {url}", text, count=1, flags=re.M)
+          else:
+              text = f"site_url: {url}\n" + text
+          p.write_text(text, encoding="utf-8")
+          print("site_url ->", url)
+          PY
+        env:
+          SITE_URL: ${{ steps.meta.outputs.site_url }}
+
+      - name: Build
+        run: mkdocs build --strict
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.HELIOS_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -p ${{ secrets.HELIOS_PORT }} ${{ secrets.HELIOS_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Backup previous version (rollback point)
+        run: |
+          REMOTE="${{ secrets.HELIOS_USER }}@${{ secrets.HELIOS_HOST }}"
+          PORT="${{ secrets.HELIOS_PORT }}"
+          BASE="${{ secrets.HELIOS_PATH }}"
+          SUB="${{ steps.meta.outputs.remote_subdir }}"
+          if [ -n "$SUB" ]; then
+            TARGET="$BASE/$SUB"
+          else
+            TARGET="$BASE"
+          fi
+          ssh -p "$PORT" -o StrictHostKeyChecking=yes "$REMOTE" bash -s << EOF
+            set -e
+            mkdir -p "$TARGET" "${BASE}/_releases"
+            STAMP=\$(date +%Y%m%d-%H%M%S)
+            # копия текущего состояния (если не пусто)
+            if [ -n "\$(ls -A '$TARGET' 2>/dev/null)" ]; then
+              mkdir -p "${BASE}/_releases/\$STAMP"
+              cp -a "$TARGET"/. "${BASE}/_releases/\$STAMP/" || true
+              # хранить только последние 5 бэкапов
+              cd "${BASE}/_releases" && ls -1dt */ 2>/dev/null | tail -n +6 | xargs -r rm -rf
+              echo "BACKUP=\$STAMP" > "${BASE}/_releases/LAST_BACKUP_${SUB:-root}.txt"
+            fi
+          EOF
+
+      - name: Rsync deploy
+        run: |
+          REMOTE="${{ secrets.HELIOS_USER }}@${{ secrets.HELIOS_HOST }}"
+          PORT="${{ secrets.HELIOS_PORT }}"
+          BASE="${{ secrets.HELIOS_PATH }}"
+          SUB="${{ steps.meta.outputs.remote_subdir }}"
+          if [ -n "$SUB" ]; then
+            TARGET="$BASE/$SUB"
+          else
+            TARGET="$BASE"
+          fi
+          ssh -p "$PORT" "$REMOTE" "mkdir -p '$TARGET'"
+          rsync -avz --delete \
+            -e "ssh -p $PORT" \
+            site/ "$REMOTE:$TARGET/"
+
+      - name: Healthcheck
+        run: |
+          URL="${{ steps.meta.outputs.public_url }}"
+          TOKEN="mkdocs-helios-ok-2026"
+          echo "Checking $URL"
+          # несколько попыток (DNS/кеш)
+          for i in 1 2 3 4 5; do
+            CODE=$(curl -sS -o /tmp/body.html -w "%{http_code}" "$URL" || echo "000")
+            if [ "$CODE" = "200" ] && grep -q "$TOKEN" /tmp/body.html; then
+              echo "Healthcheck OK (HTTP $CODE, token found)"
+              exit 0
+            fi
+            echo "Attempt $i: HTTP $CODE, token missing or error — retry..."
+            sleep 3
+          done
+          echo "Healthcheck FAILED"
+          echo "HTTP code: $CODE"
+          head -c 500 /tmp/body.html || true
+          exit 1

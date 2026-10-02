@@ -1,9 +1,7 @@
 ﻿site_name: My Docs
-site_url: https://catorol.github.io/mkdocs-site/
+site_url: https://se.ifmo.ru/~s564527/
 use_directory_urls: true
-
 theme:
   name: material
-
 nav:
   - Home: index.md
