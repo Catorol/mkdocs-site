@@ -73,24 +73,32 @@ jobs:
           REMOTE="${{ secrets.HELIOS_USER }}@${{ secrets.HELIOS_HOST }}"
           PORT="${{ secrets.HELIOS_PORT }}"
           BASE="${{ secrets.HELIOS_PATH }}"
+          RELEASES="${{ secrets.HELIOS_RELEASES }}"
           SUB="${{ steps.meta.outputs.remote_subdir }}"
+
           if [ -n "$SUB" ]; then
             TARGET="$BASE/$SUB"
+            TAG="prev-$(echo "$SUB" | sed 's#/#-#g')"
           else
             TARGET="$BASE"
+            TAG="root"
           fi
+
           ssh -p "$PORT" -o StrictHostKeyChecking=yes "$REMOTE" bash -s << EOF
-            set -e
-            mkdir -p "$TARGET" "${BASE}/_releases"
-            STAMP=\$(date +%Y%m%d-%H%M%S)
-            # копия текущего состояния (если не пусто)
-            if [ -n "\$(ls -A '$TARGET' 2>/dev/null)" ]; then
-              mkdir -p "${BASE}/_releases/\$STAMP"
-              cp -a "$TARGET"/. "${BASE}/_releases/\$STAMP/" || true
-              # хранить только последние 5 бэкапов
-              cd "${BASE}/_releases" && ls -1dt */ 2>/dev/null | tail -n +6 | xargs -r rm -rf
-              echo "BACKUP=\$STAMP" > "${BASE}/_releases/LAST_BACKUP_${SUB:-root}.txt"
+          set -e
+          mkdir -p "$TARGET" "$RELEASES"
+          STAMP=\$(date +%Y%m%d-%H%M%S)
+          DEST="$RELEASES/\${TAG}-\$STAMP"
+          if [ -n "\$(ls -A '$TARGET' 2>/dev/null)" ]; then
+            mkdir -p "\$DEST"
+            if [ "$TAG" = "root" ]; then
+              find "$TARGET" -mindepth 1 -maxdepth 1 ! -name preview ! -name _releases -exec cp -a {} "\$DEST/" \;
+            else
+              cp -a "$TARGET"/. "\$DEST/"
             fi
+            cd "$RELEASES" && ls -1dt ${TAG}-* 2>/dev/null | tail -n +6 | xargs -r rm -rf
+            echo "BACKUP=${TAG}-\$STAMP" > "$RELEASES/LAST_BACKUP_${TAG}.txt"
+          fi
           EOF
 
       - name: Rsync deploy
