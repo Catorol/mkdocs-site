@@ -84,22 +84,49 @@ jobs:
             TAG="root"
           fi
 
-          ssh -p "$PORT" -o StrictHostKeyChecking=yes "$REMOTE" bash -s << EOF
+          ssh -p "$PORT" -o StrictHostKeyChecking=yes "$REMOTE" \
+            "TARGET=$TARGET" "RELEASES=$RELEASES" "TAG=$TAG" \
+            sh -s << 'ENDSSH'
           set -e
+          cd "$HOME"
           mkdir -p "$TARGET" "$RELEASES"
-          STAMP=\$(date +%Y%m%d-%H%M%S)
-          DEST="$RELEASES/\${TAG}-\$STAMP"
-          if [ -n "\$(ls -A '$TARGET' 2>/dev/null)" ]; then
-            mkdir -p "\$DEST"
+          STAMP=$(date +%Y%m%d-%H%M%S)
+          DEST="$HOME/$RELEASES/${TAG}-$STAMP"
+          mkdir -p "$DEST"
+
+          # бэкап только если в TARGET есть файлы
+          if [ -n "$(ls -A "$HOME/$TARGET" 2>/dev/null)" ]; then
             if [ "$TAG" = "root" ]; then
-              find "$TARGET" -mindepth 1 -maxdepth 1 ! -name preview ! -name _releases -exec cp -a {} "\$DEST/" \;
+              # корень сайта, без preview
+              for item in "$HOME/$TARGET"/*; do
+                [ -e "$item" ] || continue
+                name=$(basename "$item")
+                [ "$name" = "preview" ] && continue
+                [ "$name" = "_releases" ] && continue
+                cp -Rp "$item" "$DEST/"
+              done
             else
-              cp -a "$TARGET"/. "\$DEST/"
+              cp -Rp "$HOME/$TARGET"/. "$DEST/" 2>/dev/null || true
             fi
-            cd "$RELEASES" && ls -1dt ${TAG}-* 2>/dev/null | tail -n +6 | xargs -r rm -rf
-            echo "BACKUP=${TAG}-\$STAMP" > "$RELEASES/LAST_BACKUP_${TAG}.txt"
+
+            # LAST_BACKUP — абсолютный путь, без cd
+            echo "BACKUP=${TAG}-$STAMP" > "$HOME/$RELEASES/LAST_BACKUP_${TAG}.txt"
+
+            # хранить 5 последних (без GNU xargs -r)
+            cd "$HOME/$RELEASES"
+            count=0
+            for d in $(ls -1dt ${TAG}-* 2>/dev/null); do
+              count=$((count + 1))
+              if [ "$count" -gt 5 ]; then
+                rm -rf "$d"
+              fi
+            done
+            echo "Backup OK: $DEST"
+          else
+            echo "Target empty, skip backup"
+            rmdir "$DEST" 2>/dev/null || true
           fi
-          EOF
+          ENDSSH
 
       - name: Rsync deploy
         run: |
