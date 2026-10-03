@@ -10,7 +10,7 @@
 | Репозиторий | https://github.com/Catorol/mkdocs-site |
 | GitHub Pages | https://catorol.github.io/mkdocs-site/ |
 | Helios (main) | https://se.ifmo.ru/~s564527/ |
-| Helios preview (если был) | https://se.ifmo.ru/~s564527/preview/preview-test/ |
+| Helios preview | https://se.ifmo.ru/~s564527/preview/preview-test/ |
 | Actions (успешный run) | https://github.com/Catorol/mkdocs-site/actions/runs/36986390279 |
 | Actions (проваленный run) | https://github.com/Catorol/mkdocs-site/actions/runs/36984848631 |
 
