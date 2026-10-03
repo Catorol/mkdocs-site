@@ -1,0 +1,1370 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://se.ifmo.ru/~s564527/">
+      
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.8c3ca2c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ХОД РАБОТЫ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ссылки
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Лицензии
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t3-cicd-" class="md-nav__link">
+    <span class="md-ellipsis">
+      T3. Обзор отечественных CI/CD-сервисов и статических хостингов
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="T3. Обзор отечественных CI/CD-сервисов и статических хостингов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Платформы CI/CD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Варианты размещения
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Оценка миграции workflow на отечественные платформы
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p4-helios" class="md-nav__link">
+    <span class="md-ellipsis">
+      P4. Развёртывание на Helios с контролем качества доставки
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="P4. Развёртывание на Helios с контролем качества доставки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Время доставки и размер
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Надёжность
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Удобство отладки
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preview-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preview-сборки
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Откат
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Поведение при обрыве развёртывания на середине
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ошибки и исправления
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пайплайны
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Пайплайны">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Pages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Вывод
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ХОД РАБОТЫ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ссылки
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Лицензии
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t3-cicd-" class="md-nav__link">
+    <span class="md-ellipsis">
+      T3. Обзор отечественных CI/CD-сервисов и статических хостингов
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="T3. Обзор отечественных CI/CD-сервисов и статических хостингов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Платформы CI/CD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Варианты размещения
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Оценка миграции workflow на отечественные платформы
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p4-helios" class="md-nav__link">
+    <span class="md-ellipsis">
+      P4. Развёртывание на Helios с контролем качества доставки
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="P4. Развёртывание на Helios с контролем качества доставки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Время доставки и размер
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Надёжность
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Удобство отладки
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preview-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preview-сборки
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Откат
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Поведение при обрыве развёртывания на середине
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ошибки и исправления
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пайплайны
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Пайплайны">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Pages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Вывод
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<!-- HEALTHCHECK_TOKEN: mkdocs-helios-ok-2026 -->
+<h1 id="3">Задание 3. Генераторы статических сайтов для публикации результатов исследований</h1>
+<h2 id="_1">ХОД РАБОТЫ</h2>
+<h2 id="_2">Ссылки</h2>
+<table>
+<thead>
+<tr>
+<th>Что</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Репозиторий</td>
+<td>https://github.com/Catorol/mkdocs-site</td>
+</tr>
+<tr>
+<td>GitHub Pages</td>
+<td>https://catorol.github.io/mkdocs-site/</td>
+</tr>
+<tr>
+<td>Helios (main)</td>
+<td>https://se.ifmo.ru/~s564527/</td>
+</tr>
+<tr>
+<td>Helios preview</td>
+<td>https://se.ifmo.ru/~s564527/preview/preview-test/</td>
+</tr>
+<tr>
+<td>Actions (успешный run)</td>
+<td>https://github.com/Catorol/mkdocs-site/actions/runs/36986390279</td>
+</tr>
+<tr>
+<td>Actions (проваленный run)</td>
+<td>https://github.com/Catorol/mkdocs-site/actions/runs/36984848631</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">Лицензии</h2>
+<ul>
+<li>Код (CI, конфиги): MIT — файл <code>LICENSE</code></li>
+<li>Контент <code>docs/</code>: CC BY 4.0 — файл <code>LICENSE-CONTENT</code></li>
+</ul>
+<h2 id="t3-cicd-">T3. Обзор отечественных CI/CD-сервисов и статических хостингов</h2>
+<h3 id="cicd">Платформы CI/CD</h3>
+<table>
+<thead>
+<tr>
+<th>Критерий</th>
+<th>GitVerse</th>
+<th>SourceCraft</th>
+<th>GitFlic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Модель раннеров</strong></td>
+<td>Облачные (управляются GitVerse) и self-hosted, есть раннеры организации. Облачные без доступа к docker.sock</td>
+<td>Облачные воркеры (VM 4 vCPU / 8 ГБ), serverless-воркеры, self-hosted (в том числе в Kubernetes)</td>
+<td>В SaaS описаны только свои агенты: Shell, PowerShell, Docker, запуск в Docker-контейнере или Kubernetes. Регистрируются на уровне компании</td>
+</tr>
+<tr>
+<td><strong>Синтаксис</strong></td>
+<td>YAML в <code>.gitverse/workflows/</code>, контекст <code>gitverse.*</code>. Дополнительно читает <code>.yaml</code>-файлы из <code>.github/workflows/</code></td>
+<td>Свой DSL в <code>.sourcecraft/ci.yaml</code>: <code>on</code> - <code>workflows</code> - <code>tasks</code> - <code>cubes</code></td>
+<td><code>gitflic-ci.yaml</code>, близок к GitLab CI: <code>stages</code>, <code>rules</code>, <code>needs</code>, <code>extends</code>, <code>include</code></td>
+</tr>
+<tr>
+<td><strong>Совместимость</strong></td>
+<td>Заявлена совместимость с GitHub Actions</td>
+<td>Запуск отдельных GitHub Actions через кубик с ключом <code>action</code>, а также пайплайнов с синтаксисом GitLab. Только на облачных воркерах</td>
+<td>С GitLab CI: высокая. С GitHub Actions: нет</td>
+</tr>
+<tr>
+<td><strong>Каталог готовых действий</strong></td>
+<td><code>uses:</code> из примеров документации: <code>actions/checkout</code>, <code>setup-python</code>, <code>setup-node</code>. Есть локальные действия <code>./.gitverse/actions/...</code></td>
+<td>Любые действия из GitHub Marketplace, общедоступные workflow, переиспользуемые кубики</td>
+<td>Аналога Marketplace нет. Есть шаблоны конфигураций, компоненты и <code>include</code></td>
+</tr>
+<tr>
+<td><strong>Секреты</strong></td>
+<td>Секреты и переменные уровня репозитория и организации, <code>secrets: inherit</code></td>
+<td><code>${{ secrets.X }}</code>, Yandex Lockbox, сервисные подключения, дающие IAM-токен без статических ключей</td>
+<td>Переменные CI/CD в настройках проекта, HashiCorp Vault, StarVault</td>
+</tr>
+<tr>
+<td><strong>Артефакты</strong></td>
+<td>500 МБ суммарно, хранение 30 дней</td>
+<td>100 МБ на кубик, 10 ГБ на организацию, хранение 14 дней</td>
+<td><code>artifacts: paths</code> и <code>expire_in</code></td>
+</tr>
+<tr>
+<td><strong>Кэш</strong></td>
+<td>Кэш есть и не входит в лимит артефактов. Подробностей про <code>actions/cache</code> не нашла</td>
+<td>В справочнике кубиков ключа <code>cache</code> нет</td>
+<td><code>cache: key/paths</code>, хранится локально на агенте. При нескольких агентах он может быть недоступен</td>
+</tr>
+<tr>
+<td><strong>Бесплатный тариф</strong></td>
+<td>2000 мин CI/CD в месяц, 1 ГБ под артефакты и пакеты, 3 собственных раннера для приватных репозиториев</td>
+<td>1000 мин/мес на организацию, 5 параллельных процессов. Кубик до 1200 с, задание до 3600 с. Self-hosted квоту не расходует</td>
+<td>приватные репозитории до 5 человек, репозиторий 4 ГБ, коммит 100 МБ</td>
+</tr>
+<tr>
+<td><strong>Встроенный хостинг статики</strong></td>
+<td>GitVerse Pages</td>
+<td>SourceCraft Sites</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td><strong>Документация</strong></td>
+<td>Структурированная, но с расхождениями по лимитам</td>
+<td>Подробная, на русском и английском. С 1.10.2026 действуют новые тарифы, старый файл <code>.src.ci.yaml</code> признан устаревающим</td>
+<td>Большая, на mkdocs, со справочником и примерами. Для SaaS нужно разворачивать агента</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">Варианты размещения</h3>
+<table>
+<thead>
+<tr>
+<th>Вариант</th>
+<th>Доставка файлов</th>
+<th>Свой домен и HTTPS</th>
+<th>Цена и лимиты</th>
+<th>Комментарий</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Helios ИТМО</strong></td>
+<td>SSH/scp на порт 2222 в <code>~/public_html</code> (также SFTP)</td>
+<td>Адрес вида <code>se.ifmo.ru/~номер/</code>. Для папок нужны права 755. Свой домен невозможен, HTTPS даёт <code>se.ifmo.ru</code></td>
+<td>Бесплатно для студентов</td>
+<td>Пароль выдаётся через <code>se.ifmo.ru/passwd</code>. Для CI пароль или ключ придётся хранить в секретах</td>
+</tr>
+<tr>
+<td><strong>Yandex Object Storage</strong></td>
+<td>S3 API (<code>aws s3 sync</code>, <code>yc</code>)</td>
+<td>По умолчанию сайт доступен только по HTTP. Для HTTPS нужен сертификат, его можно взять из Certificate Manager. Домен привязывается через CNAME / Cloud DNS</td>
+<td>Первые 100 ГБ исходящего трафика в месяц не тарифицируются. Первый 1 ГБ хранения и 100 000 GET бесплатны</td>
+<td>Нужен платёжный аккаунт</td>
+</tr>
+<tr>
+<td><strong>VK Cloud</strong></td>
+<td>S3-совместимое хранилище, <code>aws s3 sync --endpoint-url</code></td>
+<td>В руководстве сайт на S3 публикуется через CDN</td>
+<td>Считается индивидуально через калькулятор цен</td>
+<td>Домен и HTTPS через CDN</td>
+</tr>
+</tbody>
+</table>
+<p>Какая доставка чем обслуживается:</p>
+<ul>
+<li><strong>SSH/scp</strong> подходит для Helios и для любого своего сервера.</li>
+<li><strong>S3 API</strong> подходит для Yandex, VK Cloud, Selectel, Timeweb и Cloud.ru. Это одна и та же команда с разным <code>--endpoint-url</code>.</li>
+<li><strong>Git push</strong> нужен для GitVerse Pages и SourceCraft Sites.</li>
+<li><strong>WebDAV и FTP</strong> в документации этих хостингов я как основной способ не нашла. Для S3-хранилищ Selectel упоминаются FTP/SFTP.</li>
+</ul>
+<h3 id="workflow">Оценка миграции workflow на отечественные платформы</h3>
+<table>
+<thead>
+<tr>
+<th>Что в workflow</th>
+<th>GitVerse</th>
+<th>SourceCraft</th>
+<th>GitFlic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name:</code></td>
+<td>без изменений</td>
+<td>станет ключом в <code>workflows:</code> (переписать)</td>
+<td>имя job (переписать)</td>
+</tr>
+<tr>
+<td><code>on: push: branches: [main]</code></td>
+<td>без изменений</td>
+<td>переписать: <code>on.push[].workflows</code> + <code>filter.branches</code></td>
+<td>переписать в стиле GitLab (<code>rules</code>)</td>
+</tr>
+<tr>
+<td><code>workflow_dispatch</code></td>
+<td>без изменений</td>
+<td>ручной запуск пайплайна</td>
+<td>ручной запуск пайплайна</td>
+</tr>
+<tr>
+<td><code>permissions: contents: write</code></td>
+<td>не нужно (git-пуша нет)</td>
+<td>не нужно, если не пушить в ветку; иначе нужен токен записи</td>
+<td>не нужно</td>
+</tr>
+<tr>
+<td><code>runs-on: ubuntu-latest</code></td>
+<td>без изменений</td>
+<td>заменить на <code>image:</code> в кубике</td>
+<td><code>image:</code> плюс собственный агент с тегами</td>
+</tr>
+<tr>
+<td><code>actions/checkout@v4</code></td>
+<td>без изменений</td>
+<td>удалить: репозиторий клонируется сам</td>
+<td>удалить</td>
+</tr>
+<tr>
+<td><code>actions/setup-python@v5</code></td>
+<td>без изменений</td>
+<td>кубик <code>action:</code> или образ с Python</td>
+<td>заменить образом <code>python:3.12</code></td>
+</tr>
+<tr>
+<td><code>pip install "mkdocs==1.6.1" ...</code></td>
+<td>без изменений (<code>run:</code>)</td>
+<td>без изменений (<code>script:</code>)</td>
+<td>без изменений (<code>script:</code>)</td>
+</tr>
+<tr>
+<td>«Configure Git»</td>
+<td>удалить</td>
+<td>нужен, только если оставить  <code>gh-deploy</code></td>
+<td>удалить</td>
+</tr>
+<tr>
+<td><code>mkdocs gh-deploy --force --strict</code></td>
+<td><strong>заменить</strong>: <code>mkdocs build --strict</code> + upload + deploy</td>
+<td>можно оставить при наличии push-доступа, плюс <code>sites.yaml</code></td>
+<td><strong>заменить</strong>: build + доставка из P4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="p4-helios">P4. Развёртывание на Helios с контролем качества доставки</h2>
+<h3 id="_5">Время доставки и размер</h3>
+<table>
+<thead>
+<tr>
+<th>Шаг</th>
+<th>GitHub Pages</th>
+<th>Helios</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Set up job</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Checkout</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Setup Python</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Install MkDocs / Install dependencies</td>
+<td>6</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Configure Git</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Resolve deploy path and site_url</td>
+<td>—</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Patch site_url for this deploy</td>
+<td>—</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Build</td>
+<td>в составе следующего шага</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Build and deploy to gh-pages</td>
+<td>3</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Setup SSH</td>
+<td>—</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Backup previous version (rollback point)</td>
+<td>—</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Rsync deploy</td>
+<td>—</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Healthcheck</td>
+<td>—</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Post-шаги и Complete job</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Итого job</strong></td>
+<td><strong>14</strong></td>
+<td><strong>31</strong></td>
+</tr>
+<tr>
+<td><strong>Всего</strong></td>
+<td><strong>18</strong></td>
+<td><strong>35</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Вес</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitHub Pages</td>
+<td>2,35 МБ</td>
+</tr>
+<tr>
+<td>Helios</td>
+<td>1,99 МБ</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">Надёжность</h3>
+<p><strong>GitHub Pages</strong>
+- Высокая доступность инфраструктуры GitHub.
+- Мало «движущихся частей»: токен встроенный, нет своего SSH.
+- Сбой обычно в сборке (<code>--strict</code>, зависимости) или в настройке Source (branch vs Actions).</p>
+<p><strong>Helios</strong>
+- Зависит от сервера ИТМО (FreeBSD, порт 2222, учетная запись <code>s564527</code>).
+- Нужны корректные Secrets: ключ, host, port, user, пути <code>public_html</code> / <code>site_releases</code>.
+- Ошибки типичны на стыке Linux-runner &lt;-&gt; FreeBSD (<code>xargs -r</code>, пути, <code>~</code> в кавычках).
+- После выноса бэкапов в <code>~/site_releases/</code> исключена рекурсия <code>_releases</code> внутри <code>public_html</code>.</p>
+<h3 id="_7">Удобство отладки</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>GitHub Pages</th>
+<th>Helios</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Логи</td>
+<td>только Actions (+ вкладка Pages)</td>
+<td>Actions <strong>и</strong> SSH: <code>ls</code>, <code>head</code>, <code>curl</code> на сервере</td>
+</tr>
+<tr>
+<td>Проверка файла на диске</td>
+<td>нет (только через URL)</td>
+<td>прямой доступ к <code>~/public_html/</code>, <code>~/site_releases/</code></td>
+</tr>
+<tr>
+<td>Preview по веткам</td>
+<td>неудобно из коробки</td>
+<td>отдельный подкаталог, сразу видно</td>
+</tr>
+<tr>
+<td>Откат</td>
+<td>revert + новый deploy или ручной rollback branch</td>
+<td><code>cp -Rp ~/site_releases/root-…/. ~/public_html/</code></td>
+</tr>
+<tr>
+<td>Healthcheck в CI</td>
+<td>обычно не делают</td>
+<td>обязательный шаг: 200 + контрольная строка</td>
+</tr>
+</tbody>
+</table>
+<p>На Helios отладка богаче: можно отличить «не собралось», «не доехало», «доехало, но неверный <code>site_url</code>».</p>
+<h3 id="preview-">Preview-сборки</h3>
+<ul>
+<li><strong>main / master</strong> -&gt; корень <code>public_html</code> (боевой URL).</li>
+<li><strong>остальные ветки</strong> -&gt; <code>public_html/preview/&lt;безопасное-имя-ветки&gt;/</code>.</li>
+<li>В workflow для каждой ветки подставляется свой <code>site_url</code>, иначе ломаются CSS и ссылки в подкаталоге.</li>
+</ul>
+<p>На Pages такой схемы «из коробки» нет; для отчёта зафиксировано, что требование preview выполнено на Helios.</p>
+<h3 id="_8">Откат</h3>
+<ol>
+<li>Бэкапы: <code>~/site_releases/</code>, например <code>root-20261002-113947/</code>, файл <code>LAST_BACKUP_root.txt</code>.</li>
+<li><strong>До:</strong> сайт с текстом «Тест».</li>
+<li>Команды: очистка <code>public_html</code> кроме <code>preview</code> -&gt; <code>cp -Rp ~/site_releases/root-20261002-113947/. ~/public_html/</code>.</li>
+<li><strong>После:</strong> страница «Welcome to MkDocs».</li>
+<li>Каталог <code>preview/</code> не затрагивался.</li>
+</ol>
+<p><img alt="До отката" src="https://i.ibb.co/jvkNrVwq/image.png" />
+<img alt="Команды" src="https://i.ibb.co/Xrb9FBKc/1.png" />
+<img alt="Команды" src="https://i.ibb.co/0y497DfH/image.png" />
+<img alt="После отката" src="https://i.ibb.co/Mx71F5cY/2.png" /></p>
+<h3 id="_9">Поведение при обрыве развёртывания на середине</h3>
+<p><strong>GitHub Pages</strong><br />
+Пока job не завершил publish, пользователи обычно продолжают видеть <strong>предыдущую</strong> успешную версию. Частично опубликованного дерева в привычном виде нет: либо старый сайт, либо (редко) кратковременная неконсистентность на CDN.</p>
+<p><strong>Helios + rsync <code>--delete</code></strong><br />
+При обрыве SSH/rsync часть файлов уже новая, часть старая или удалённая, возможна <strong>битая</strong> смесь.</p>
+<p>Меры в пайплайне:
+1. <strong>Сначала backup</strong> текущего дерева в <code>~/site_releases/</code>.
+2. Затем <code>rsync</code>.
+3. Затем <strong>healthcheck</strong> (HTTP 200 + <code>mkdocs-helios-ok-2026</code>); при неуспехе job падает.
+4. Восстановление: копирование из <code>site_releases</code> (как при учебном откате).</p>
+<p>Обрыв на Helios опаснее, чем на Pages; компенсируется бэкапом до выкладки и проверкой после.</p>
+<h2 id="_10">Ошибки и исправления</h2>
+<p><strong>1. Рекурсивный бэкап <code>_releases</code> на Helios</strong><br />
+- <strong>Ошибка:</strong> <code>cp: .../_releases/.../_releases/...: name too long</code>; затем <code>LAST_BACKUP_root.txt: Нет такого файла или каталога</code>.<br />
+- <strong>Причина:</strong> каталог бэкапов лежал <strong>внутри</strong> <code>public_html</code>, backup копировал его в себя; плюс особенности FreeBSD (нет GNU <code>xargs -r</code>), неверное раскрытие путей/<code>~</code>.<br />
+- <strong>Решение:</strong> бэкапы в <code>~/site_releases/</code> <strong>вне</strong> сайта; копирование без <code>preview</code>; пути от <code>$HOME</code>; совместимые с FreeBSD команды; secret <code>HELIOS_RELEASES=site_releases</code>.</p>
+<p><strong>2. Падение step Backup в Actions</strong><br />
+- <strong>Ошибка:</strong> job красный на «Backup previous version».<br />
+- <strong>Причина:</strong> см. п. 4; redirect в несуществующий каталог после неудачного <code>cd</code>.<br />
+- <strong>Решение:</strong> переписан step Backup (heredoc <code>'ENDSSH'</code>, <code>mkdir -p</code>, запись <code>LAST_BACKUP</code> по абсолютному пути).</p>
+<h2 id="_11">Пайплайны</h2>
+<h3 id="github-pages">GitHub Pages</h3>
+<p><img alt="Успешный деплой" src="https://i.ibb.co/ycxDzPrj/image.png" /></p>
+<pre><code># Публикация документации на GitHub Pages через ветку gh-pages.
+# Подход: mkdocs gh-deploy (сборка + push в gh-pages), не upload-pages-artifact.
+name: Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]          # только основная ветка -&gt; «боевой» сайт Pages
+  workflow_dispatch:          # ручной запуск из вкладки Actions
+
+permissions:
+  contents: write             # нужно, чтобы bot мог пушить в gh-pages
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Клонирование репозитория на runner
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Python для MkDocs
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # Фиксированные версии — воспроизводимая сборка
+      - name: Install MkDocs
+        run: |
+          pip install &quot;mkdocs==1.6.1&quot; &quot;mkdocs-material==9.5.39&quot;
+
+      # Автор коммитов в gh-pages — github-actions[bot]
+      - name: Configure Git
+        run: |
+          git config user.name &quot;github-actions[bot]&quot;
+          git config user.email &quot;41898282+github-actions[bot]@users.noreply.github.com&quot;
+
+      # --strict: битые ссылки и предупреждения = ошибка CI
+      # --force: перезапись gh-pages
+      - name: Build and deploy to gh-pages
+        run: mkdocs gh-deploy --force --strict
+</code></pre>
+<h3 id="helios">Helios</h3>
+<p><img alt="Успешный деплой" src="https://i.ibb.co/S4pCFjsg/image.png" /></p>
+<pre><code># Выкладка на Helios ИТМО: SSH-ключ, rsync, backup, healthcheck, preview по веткам.
+name: Deploy to Helios
+
+on:
+  push:
+    branches: ['**']          # main -&gt; корень; остальные -&gt; preview/&lt;branch&gt;/
+  workflow_dispatch:
+
+# Один активный deploy на ветку; новый push отменяет предыдущий run
+concurrency:
+  group: helios-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install &quot;mkdocs==1.6.1&quot; &quot;mkdocs-material==9.5.39&quot;
+          # альтернатива: pip install -r requirements.txt
+
+      # main/master -&gt; public_html; иначе -&gt; public_html/preview/&lt;safe-name&gt;/
+      # site_url и public_url для CSS/ссылок и healthcheck
+      - name: Resolve deploy path and site_url
+        id: meta
+        run: |
+          BRANCH=&quot;${GITHUB_REF_NAME}&quot;
+          SAFE=$(echo &quot;$BRANCH&quot; | sed 's#[^a-zA-Z0-9._-]#-#g')
+          if [ &quot;$BRANCH&quot; = &quot;main&quot; ] || [ &quot;$BRANCH&quot; = &quot;master&quot; ]; then
+            echo &quot;remote_subdir=&quot; &gt;&gt; $GITHUB_OUTPUT
+            echo &quot;site_url=${{ secrets.SITE_URL_BASE }}/&quot; &gt;&gt; $GITHUB_OUTPUT
+            echo &quot;public_url=${{ secrets.SITE_URL_BASE }}/&quot; &gt;&gt; $GITHUB_OUTPUT
+          else
+            echo &quot;remote_subdir=preview/${SAFE}&quot; &gt;&gt; $GITHUB_OUTPUT
+            echo &quot;site_url=${{ secrets.SITE_URL_BASE }}/preview/${SAFE}/&quot; &gt;&gt; $GITHUB_OUTPUT
+            echo &quot;public_url=${{ secrets.SITE_URL_BASE }}/preview/${SAFE}/&quot; &gt;&gt; $GITHUB_OUTPUT
+          fi
+
+      # Типичная ошибка: site_url от Pages на Helios в подкаталоге ломает ассеты
+      - name: Patch site_url for this deploy
+        run: |
+          python - &lt;&lt; 'PY'
+          import pathlib, re, os
+          p = pathlib.Path(&quot;mkdocs.yml&quot;)
+          text = p.read_text(encoding=&quot;utf-8&quot;)
+          url = os.environ[&quot;SITE_URL&quot;]
+          if re.search(r&quot;^site_url:\s*.*$&quot;, text, re.M):
+              text = re.sub(r&quot;^site_url:\s*.*$&quot;, f&quot;site_url: {url}&quot;, text, count=1, flags=re.M)
+          else:
+              text = f&quot;site_url: {url}\n&quot; + text
+          p.write_text(text, encoding=&quot;utf-8&quot;)
+          print(&quot;site_url -&gt;&quot;, url)
+          PY
+        env:
+          SITE_URL: ${{ steps.meta.outputs.site_url }}
+
+      # Строгая сборка — как в требованиях к CI
+      - name: Build
+        run: mkdocs build --strict
+
+      # Отдельный deploy-ключ (secret HELIOS_SSH_KEY), не пароль аккаунта
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo &quot;${{ secrets.HELIOS_SSH_KEY }}&quot; &gt; ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -p ${{ secrets.HELIOS_PORT }} ${{ secrets.HELIOS_HOST }} &gt;&gt; ~/.ssh/known_hosts
+
+      # Бэкап в ~/site_releases (вне public_html), чтобы не было рекурсии _releases
+      # FreeBSD: cp -Rp, без GNU xargs -r; храним 5 последних снимков
+      - name: Backup previous version (rollback point)
+        run: |
+          REMOTE=&quot;${{ secrets.HELIOS_USER }}@${{ secrets.HELIOS_HOST }}&quot;
+          PORT=&quot;${{ secrets.HELIOS_PORT }}&quot;
+          BASE=&quot;${{ secrets.HELIOS_PATH }}&quot;
+          RELEASES=&quot;${{ secrets.HELIOS_RELEASES }}&quot;
+          SUB=&quot;${{ steps.meta.outputs.remote_subdir }}&quot;
+          if [ -n &quot;$SUB&quot; ]; then
+            TARGET=&quot;$BASE/$SUB&quot;
+            TAG=&quot;prev-$(echo &quot;$SUB&quot; | sed 's#/#-#g')&quot;
+          else
+            TARGET=&quot;$BASE&quot;
+            TAG=&quot;root&quot;
+          fi
+          ssh -p &quot;$PORT&quot; -o StrictHostKeyChecking=yes &quot;$REMOTE&quot; \
+            &quot;TARGET=$TARGET&quot; &quot;RELEASES=$RELEASES&quot; &quot;TAG=$TAG&quot; \
+            sh -s &lt;&lt; 'ENDSSH'
+          set -e
+          cd &quot;$HOME&quot;
+          mkdir -p &quot;$TARGET&quot; &quot;$RELEASES&quot;
+          STAMP=$(date +%Y%m%d-%H%M%S)
+          DEST=&quot;$HOME/$RELEASES/${TAG}-$STAMP&quot;
+          mkdir -p &quot;$DEST&quot;
+          if [ -n &quot;$(ls -A &quot;$HOME/$TARGET&quot; 2&gt;/dev/null)&quot; ]; then
+            if [ &quot;$TAG&quot; = &quot;root&quot; ]; then
+              for item in &quot;$HOME/$TARGET&quot;/*; do
+                [ -e &quot;$item&quot; ] || continue
+                name=$(basename &quot;$item&quot;)
+                [ &quot;$name&quot; = &quot;preview&quot; ] &amp;&amp; continue
+                [ &quot;$name&quot; = &quot;_releases&quot; ] &amp;&amp; continue
+                cp -Rp &quot;$item&quot; &quot;$DEST/&quot;
+              done
+            else
+              cp -Rp &quot;$HOME/$TARGET&quot;/. &quot;$DEST/&quot; 2&gt;/dev/null || true
+            fi
+            echo &quot;BACKUP=${TAG}-$STAMP&quot; &gt; &quot;$HOME/$RELEASES/LAST_BACKUP_${TAG}.txt&quot;
+            cd &quot;$HOME/$RELEASES&quot;
+            count=0
+            for d in $(ls -1dt ${TAG}-* 2&gt;/dev/null); do
+              count=$((count + 1))
+              if [ &quot;$count&quot; -gt 5 ]; then
+                rm -rf &quot;$d&quot;
+              fi
+            done
+            echo &quot;Backup OK: $DEST&quot;
+          else
+            echo &quot;Target empty, skip backup&quot;
+            rmdir &quot;$DEST&quot; 2&gt;/dev/null || true
+          fi
+          ENDSSH
+
+      # Доставка статики; --delete убирает лишние файлы на сервере
+      - name: Rsync deploy
+        run: |
+          REMOTE=&quot;${{ secrets.HELIOS_USER }}@${{ secrets.HELIOS_HOST }}&quot;
+          PORT=&quot;${{ secrets.HELIOS_PORT }}&quot;
+          BASE=&quot;${{ secrets.HELIOS_PATH }}&quot;
+          SUB=&quot;${{ steps.meta.outputs.remote_subdir }}&quot;
+          if [ -n &quot;$SUB&quot; ]; then
+            TARGET=&quot;$BASE/$SUB&quot;
+          else
+            TARGET=&quot;$BASE&quot;
+          fi
+          ssh -p &quot;$PORT&quot; &quot;$REMOTE&quot; &quot;mkdir -p '$TARGET'&quot;
+          rsync -avz --delete \
+            -e &quot;ssh -p $PORT&quot; \
+            site/ &quot;$REMOTE:$TARGET/&quot;
+
+      # Контроль качества: HTTP 200 + токен из docs/index.md
+      - name: Healthcheck
+        run: |
+          URL=&quot;${{ steps.meta.outputs.public_url }}&quot;
+          TOKEN=&quot;mkdocs-helios-ok-2026&quot;
+          echo &quot;Checking $URL&quot;
+          for i in 1 2 3 4 5; do
+            CODE=$(curl -sS -o /tmp/body.html -w &quot;%{http_code}&quot; &quot;$URL&quot; || echo &quot;000&quot;)
+            if [ &quot;$CODE&quot; = &quot;200&quot; ] &amp;&amp; grep -q &quot;$TOKEN&quot; /tmp/body.html; then
+              echo &quot;Healthcheck OK (HTTP $CODE, token found)&quot;
+              exit 0
+            fi
+            echo &quot;Attempt $i: HTTP $CODE, token missing or error — retry...&quot;
+            sleep 3
+          done
+          echo &quot;Healthcheck FAILED&quot;
+          echo &quot;HTTP code: $CODE&quot;
+          head -c 500 /tmp/body.html || true
+          exit 1
+</code></pre>
+<h2 id="_12">Вывод</h2>
+<p>Для публикации результатов учебных и исследовательских проектов в формате статического сайта рекомендуемый стек:
+- генератор: MkDocs + Material;
+- CI: GitHub Actions (сборка --strict);
+- публичный просмотр: GitHub Pages;
+- сдача/вуз: Helios по SSH/rsync + deploy-ключ, healthcheck, preview-ветки, откат из site_releases.</p>
+<p>Ограничения, при которых рекомендация меняется:
+- только контур РФ / запрет GitHub -&gt; GitVerse/SourceCraft + Object Storage или Helios;
+- нужен свой домен и HTTPS без вузовского URL -&gt; Yandex Object Storage + CDN, не Helios;
+- команда без доступа к Helios -&gt; только Pages или S3;
+- жёсткие требования к preview/rollback в CI -&gt; Helios-схема предпочтительнее «голого» Pages.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.525ec568.min.js"></script>
+      
+    
+  </body>
+</html>
